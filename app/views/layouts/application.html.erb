@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inkognit</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <header>
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- logo -->
+          <div class="logo">
+            <a href="#">
+              <%= image_tag "img/logo.png" %>
+            </a>
+          </div>
+          <!-- end logo -->
+          <!-- top menu -->
+          <div class="navigation">
+            <nav>
+              <% if user_signed_in?%>
+                  <ul class="nav topnav">
+                    <li>
+                      <div class="row"><b> <%=current_user.email %></b>&nbsp&nbsp <%= link_to "Sign out", destroy_user_session_path , class:"btn" %></div>
+                    </li>
+                  </ul>
+              <% else %>
+                  <ul class="nav topnav">
+
+                    <li>
+                      <a href="#"><i class="icon-facebook"></i> Ingresar con Facebook </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    </li>
+                  <li>
+                    <a href="users/sign_in"><i class="icon-signin"></i> Entrar </a>
+                  </li>
+                  </ul>
+            <% end %>
+            </nav>
+          </div>
+          <!-- end menu -->
+        </div>
+      </div>
+    </div>
+  </header>
+</head>
+<body>
+
+<% flash.each do |key,value|%>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

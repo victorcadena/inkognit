@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lumia - Multipurpose responsive bootstrap website template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- styles -->
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!-- fav and touch icons -->
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body>
+<div id="wrapper">
+
+<section id="intro">
+  <div class="iview-slider">
+    <div id="iview">
+      <div data-iview:thumbnail="photos/photo11_thumb.jpg" data-iview:image="assets/img/slides/iview/slide1/img1.jpg">
+        <div class="iview-caption" data-x="250" data-y="265" data-transition="wipeRight">
+          Touch swipe for iOs and android devices
+        </div>
+        <div class="iview-caption btn btn-primary btn-large e_fadeIn caption" data-x="250" data-y="180">
+          <%=link_to "Registrarse", new_user_registration_path, style:"color:#FFFFFF"%>
+        </div>
+        <div class="iview-caption image" data-x="840" data-y="60" data-transition="wipeUp">
+          <img src="assets/img/slides/iview/slide1/sub-1.png" alt="" />
+        </div>
+        <div class="iview-caption image" data-x="960" data-y="170" data-transition="wipeUp" >
+          <img src="assets/img/slides/iview/slide1/sub-2.png" alt="" />
+        </div>
+        <div class="iview-caption image" data-x="760" data-y="160" data-transition="wipeUp">
+          <img src="assets/img/slides/iview/slide1/sub-3.png" alt="" />
+        </div>
+        <div class="iview-caption image" data-x="720" data-y="240" data-transition="wipeUp">
+          <img src="assets/img/slides/iview/slide1/sub-4.png" alt="" />
+        </div>
+      </div>
+      <div data-iview:thumbnail="photos/photo12_thumb.jpg" data-iview:image="assets/img/slides/iview/slide2/img2.jpg" data-iview:transition="block-drop-random" data-iview:pausetime="2000">
+        <div class="iview-caption image" data-x="350" data-y="110" data-transition="wipeUp" data-easing="easeInOutElastic">
+          <img src="assets/img/slides/iview/slide2/opera.png" alt="" />
+        </div>
+        <div class="iview-caption image" data-x="1070" data-y="110" data-transition="wipeUp" data-easing="easeInOutElastic">
+          <img src="assets/img/slides/iview/slide2/safari.png" alt="" />
+        </div>
+        <div class="iview-caption image" data-x="460" data-y="80" data-transition="wipeUp" data-easing="easeInOutElastic">
+          <img src="assets/img/slides/iview/slide2/ie.png" alt="" />
+        </div>
+        <div class="iview-caption image" data-x="900" data-y="80" data-transition="wipeUp" data-easing="easeInOutElastic">
+          <img src="assets/img/slides/iview/slide2/chrome.png" alt="" />
+        </div>
+        <div class="iview-caption image" data-x="670" data-y="80" data-transition="wipeUp" data-easing="easeInOutElastic">
+          <img src="assets/img/slides/iview/slide2/firefox.png" alt="" />
+        </div>
+        <div class="iview-caption caption-theme" data-x="250" data-y="280" data-transition="wipeDown">
+          <h2>Cross browsers compability</h2>
+        </div>
+      </div>
+      <div data-iview:thumbnail="photos/photo13_thumb.jpg" data-iview:image="assets/img/slides/iview/slide3/img3.jpg">
+        <div class="iview-caption video" data-x="250" data-y="60" data-transition="wipeDown" data-easing="easeInOutElastic">
+          <iframe src="http://player.vimeo.com/video/30585464?title=0&amp;byline=0">
+          </iframe>
+        </div>
+        <div class="iview-caption caption-theme" data-x="770" data-y="60" data-transition="expandLeft" data-easing="easeInOutElastic">
+          <h2>Put any embed video easily</h2>
+        </div>
+        <div class="iview-caption" data-x="770" data-y="140" data-transition="expandRight" data-easing="easeInOutElastic">
+          Georgeous animated timer with high customizable options
+        </div>
+        <div class="iview-caption" data-x="770" data-y="190" data-transition="expandRight" data-easing="easeInOutElastic">
+          Fine tuned, sleek and smooth! this theme will impress your visitor
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="maincontent">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h4 class="rheading">Recent works<span></span></h4>
+        <div class="row">
+          <div class="span4">
+            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+                <div> <%= f.label :name %><br />
+                  <%= f.text_field :name %></div>
+
+                <div> <%= f.label :gender %><br />
+                  <%= f.text_field :gender %></div>
+
+                <div> <%= f.label :birthDate %><br />
+                  <%= f.date_select :birthDate %></div>
+
+                <div><%= f.label :email %><br />
+                  <%= f.email_field :email, :autofocus => true %></div>
+
+                <div><%= f.label :password %><br />
+                  <%= f.password_field :password %></div>
+
+                <div><%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation %></div>
+
+                <div class ="btn"><%= f.submit "Sign up" %></div>
+            <% end %>
+
+            <%= render "devise/shared/links" %>
+            <a href="#" class="btn btn-theme">Read More</a>
+          </div>
+          <div class="span8">
+            <div id="latest-work" class="carousel btleft">
+              <div class="carousel-wrapper">
+                <ul class="da-thumbs">
+                  <li>
+                    <img src="assets/img/dummies/work1.jpg" alt="" />
+                    <article class="da-animate da-slideFromRight">
+                      <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
+                        <i class="icon-zoom-in icon-rounded icon-48 active"></i>
+                      </a>
+                      <a href="portfolio-detail.html">
+                        <i class="icon-link icon-rounded icon-48 active"></i>
+                      </a>
+                      <div class="hidden-tablet">
+                        <p>
+                          Serenity theme
+                        </p>
+                      </div>
+                    </article>
+                  </li>
+                  <li>
+                    <img src="assets/img/dummies/work2.jpg" alt="" />
+                    <article class="da-animate da-slideFromRight">
+                      <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
+                        <i class="icon-zoom-in icon-rounded icon-48 active"></i>
+                      </a>
+                      <a href="portfolio-detail.html">
+                        <i class="icon-link icon-rounded icon-48 active"></i>
+                      </a>
+                      <div class="hidden-tablet">
+                        <p>
+                          Dark apps
+                        </p>
+                      </div>
+                    </article>
+                  </li>
+                  <li>
+                    <img src="assets/img/dummies/work3.jpg" alt="" />
+                    <article class="da-animate da-slideFromRight">
+                      <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
+                        <i class="icon-zoom-in icon-rounded icon-48 active"></i>
+                      </a>
+                      <a href="portfolio-detail.html">
+                        <i class="icon-link icon-rounded icon-48 active"></i>
+                      </a>
+                      <div class="hidden-tablet">
+                        <p>
+                          Mobile apps
+                        </p>
+                      </div>
+                    </article>
+                  </li>
+                  <li>
+                    <img src="assets/img/dummies/work4.jpg" alt="" />
+                    <article class="da-animate da-slideFromRight">
+                      <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
+                        <i class="icon-zoom-in icon-rounded icon-48 active"></i>
+                      </a>
+                      <a href="portfolio-detail.html">
+                        <i class="icon-link icon-rounded icon-48 active"></i>
+                      </a>
+                      <div class="hidden-tablet">
+                        <p>
+                          Mobile template
+                        </p>
+                      </div>
+                    </article>
+                  </li>
+                  <li>
+                    <img src="assets/img/dummies/work5.jpg" alt="" />
+                    <article class="da-animate da-slideFromRight">
+                      <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
+                        <i class="icon-zoom-in icon-rounded icon-48 active"></i>
+                      </a>
+                      <a href="portfolio-detail.html">
+                        <i class="icon-link icon-rounded icon-48 active"></i>
+                      </a>
+                      <div class="hidden-tablet">
+                        <p>
+                          Business theme
+                        </p>
+                      </div>
+                    </article>
+                  </li>
+                  <li>
+                    <img src="assets/img/dummies/work6.jpg" alt="" />
+                    <article class="da-animate da-slideFromRight">
+                      <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
+                        <i class="icon-zoom-in icon-rounded icon-48 active"></i>
+                      </a>
+                      <a href="portfolio-detail.html">
+                        <i class="icon-link icon-rounded icon-48 active"></i>
+                      </a>
+                      <div class="hidden-tablet">
+                        <p>
+                          Portfolio graphic
+                        </p>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer
+================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="widget">
+          <h5>Interesting pages</h5>
+          <ul class="regular">
+            <li><a href="#">About our company</a></li>
+            <li><a href="#">How we do all stuff</a></li>
+            <li><a href="#">Our recent works</a></li>
+            <li><a href="#">Press releases</a></li>
+            <li><a href="#">Get in touch with us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="widget">
+          <h5>Latest tweets</h5>
+          <div class="twitter">
+          </div>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="widget">
+          <h5>Flickr photostream</h5>
+          <div class="flickr-badge">
+            <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+          </div>
+          <div class="clear">
+          </div>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="widget">
+          <h5>How to find us</h5>
+          <address>
+            <i class="icon-home"></i><strong>Lumia company, Inc.</strong><br>
+            X104 Awesome ville, Suite AB12<br>
+            Jakarta 12420 Indonesia </address>
+          <p>
+            <i class="icon-phone"></i> (123) 456-7890 - (123) 555-8890<br>
+            <i class="icon-envelope-alt"></i> email@domainname.com
+          </p>
+        </div>
+        <div class="widget">
+          <ul class="social">
+            <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square icon-32"></i></a></li>
+            <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square icon-32"></i></a></li>
+            <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square icon-32"></i></a></li>
+            <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square icon-32"></i></a></li>
+            <li><a href="#" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square icon-32"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="verybottom">
+    <div class="container">
+      <div class="row">
+        <div class="span6">
+          <p>
+            &copy; Lumia 2013 - All right reserved
+          </p>
+        </div>
+        <div class="span6">
+          <p class="pull-right">
+            Designed by <a href="http://iweb-studio.com">iWebStudio</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- end wrapper -->
+<a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-48 active"></i></a>
+<%=javascript_include_tag "jquery"%>
+<%=javascript_include_tag "raphael-min"%>
+<%=javascript_include_tag "jquery.easing.1.3"%>
+<%=javascript_include_tag "bootstrap"%>
+<%=javascript_include_tag "jquery.easing.1.3"%>
+<%=javascript_include_tag "google-code-prettify/prettify.js"%>
+<%=javascript_include_tag "jquery.elastislide"%>
+<%=javascript_include_tag "jquery.tweet"%>
+<%=javascript_include_tag "jquery.prettyPhoto"%>
+<%=javascript_include_tag "jquery.flexslider"%>
+<%=javascript_include_tag "iview"%>
+<%=javascript_include_tag "jquery-hover-effect"%>
+<%=javascript_include_tag "animate"%>
+<%=javascript_include_tag "custom"%>
+</body>
+</html>

@@ -21,7 +21,48 @@
 </head>
 <body>
 <div id="wrapper">
+<header>
+  <!-- Navbar
+  ================================================== -->
+  <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <!-- logo -->
+        <div class="logo">
+          <a href="#">
+            <%= image_tag "img/logo.png" %>
+          </a>
+        </div>
+        <!-- end logo -->
+        <!-- top menu -->
+        <div class="navigation">
+          <nav>
+            <% if user_signed_in?%>
+                <ul class="nav topnav">
+                  <li>
+                    <div class="row"><b> <%=current_user.email %></b>&nbsp&nbsp <%= link_to "Sign out", destroy_user_session_path , class:"btn" %></div>
+                  </li>
+                </ul>
+            <% else %>
+                <ul class="nav topnav">
 
+                  <li>
+                    <a href="#"><i class="icon-facebook"></i> Ingresar con Facebook </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  </li>
+                  <li>
+                    <%=	 link_to new_user_session_path do%>
+                        <i class="icon-signin"></i> Entrar
+                    <%end%>
+                  </li>
+                </ul>
+            <% end %>
+          </nav>
+        </div>
+        <!-- end menu -->
+      </div>
+    </div>
+  </div>
+</header>
 <section id="intro">
   <div class="iview-slider">
     <div id="iview">

@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20130716193933) do
     t.integer "user_id"
   end
 
-  add_index "questions_users", ["question_id", "user_id"], :name => "index_questions_users_on_question_id_and_user_id"
+  add_index "questions_users", ["question_id", "user_id"], :name => "index_questions_users_on_question_id_and_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

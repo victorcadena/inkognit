@@ -1,0 +1,25 @@
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+				<%= @user.name %>
+			</h1>
+		</section>
+	</aside>
+
+	<div class="span8">
+		<% if @questions.any? %>
+			<h3>Questions (<%= @questions.count %>)</h3>
+			<ol class="microposts">
+				<%@questions.each do |u|%>
+					<li>
+						<span class="content"><%= u.question %></span>
+						<span class="timestamp">
+							Posted <%= time_ago_in_words(u.created_at) %> ago.
+						</span>
+					</li>
+				<%end%>
+			</ol>
+		<% end %>
+	</div>
+</div>

@@ -6,7 +6,11 @@
 			</h1>
 		</section>
 	</aside>
-
+  <ul class="nav topnav">
+    <li>
+      <div class="row"><b> <%=current_user.email %></b>&nbsp&nbsp <%= link_to "Sign out", destroy_user_session_path , class:"btn" %></div>
+    </li>
+  </ul>
 	<div class="span8">
 		<% if @questions.any? %>
 			<h3>Questions (<%= @questions.count %>)</h3>

@@ -1,9 +1,10 @@
 Inkognit::Application.routes.draw do
   devise_for :users
-
-    root :to => 'home#index'
     get "home/about"
-
+  authenticated :user do
+    root :to => 'users#show'
+  end
+  root :to => "home#index"
     resources :users do
       resources :questions
     end
